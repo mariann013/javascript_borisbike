@@ -18,3 +18,8 @@ DockingStation.prototype.release = function(bike) {
     this.bikes.splice(this.bikes.indexOf(bike), 1);
   };
 };
+
+DockingStation.prototype.reportBreak = function(bike) {
+  bike.break();
+  return bike.isWorking();
+};

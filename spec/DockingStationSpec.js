@@ -5,7 +5,7 @@ describe ("DockingStation", function() {
   beforeEach( function() {
     dockingStation = new DockingStation;
     bikes = [];
-    // plane = { land: function(){}, isLanded: function(){ return true} }
+    bike = { isWorking: function(){}, break: function(){} }
     capacity = dockingStation.capacity;
   });
 
@@ -29,5 +29,11 @@ describe ("DockingStation", function() {
       dockingStation.dock(bike);
     };
     expect( function() { dockingStation.dock(bike) }).toThrow("Sorry, docking station full!");
+  });
+
+  it("should be able to report broken bike", function () {
+    bike = new Bike;
+    dockingStation.reportBreak(bike);
+    expect(bike.isWorking()).toEqual(false);
   });
 })
