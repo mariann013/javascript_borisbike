@@ -8,7 +8,7 @@ DockingStation.prototype.dock = function(bike) {
     throw "Sorry, docking station full!";
   } else {
     this.bikes.push(bike);
-  }
+  };
 };
 
 DockingStation.prototype.release = function(bike) {
@@ -16,5 +16,5 @@ DockingStation.prototype.release = function(bike) {
     throw "Sorry, there are no bikes!";
   } else {
     this.bikes.splice(this.bikes.indexOf(bike), 1);
-  }
+  };
 };
