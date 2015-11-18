@@ -14,9 +14,13 @@ describe ("DockingStation", function() {
     expect(dockingStation.bikes).toEqual([bike]);
   });
 
-  it("should release a bike", function () {
+  it("should release a bike when there is a bike", function () {
     dockingStation.dock(bike);
-    dockingStation.releaseBike(bike);
+    dockingStation.release(bike);
     expect(dockingStation.bikes).toEqual([]);
+  });
+
+  it("should throw errro if there are no bikes available", function () {
+      expect(function() { dockingStation.release(bike) }).toThrow("Sorry, there are no bikes!");
   });
 })

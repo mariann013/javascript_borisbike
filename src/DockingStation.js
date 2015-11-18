@@ -7,6 +7,10 @@ DockingStation.prototype.dock = function(bike) {
   this.bikes.push(bike);
 };
 
-DockingStation.prototype.releaseBike = function(bike) {
-  this.bikes.splice(this.bikes.indexOf(bike), 1);
+DockingStation.prototype.release = function(bike) {
+  if (this.bikes.length === 0) {
+    throw "Sorry, there are no bikes!";
+  } else {
+    this.bikes.splice(this.bikes.indexOf(bike), 1);
+  }
 };
