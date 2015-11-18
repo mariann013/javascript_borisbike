@@ -8,4 +8,8 @@ describe ("Bike", function() {
     expect(bike.isWorking()).toEqual(true);
   });
 
+  it("should be able to break a bike", function() {
+    bike.break();
+    expect(bike.isWorking()).toEqual(false);
+  });
 })

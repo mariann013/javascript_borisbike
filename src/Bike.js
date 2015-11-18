@@ -6,3 +6,7 @@ function Bike() {
 Bike.prototype.isWorking = function() {
   return (this.working);
 };
+
+Bike.prototype.break = function() {
+  this.working = false;
+};
