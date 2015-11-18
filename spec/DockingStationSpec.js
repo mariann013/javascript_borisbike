@@ -20,7 +20,14 @@ describe ("DockingStation", function() {
     expect(dockingStation.bikes).toEqual([]);
   });
 
-  it("should throw errro if there are no bikes available", function () {
+  it("should throw errror if there are no bikes available", function () {
       expect(function() { dockingStation.release(bike) }).toThrow("Sorry, there are no bikes!");
+  });
+
+  it("should throw error if station has reached capacity", function() {
+    for(var i = 0; i <capacity; ++i) {
+      dockingStation.dock(bike);
+    };
+    expect( function() { dockingStation.dock(bike) }).toThrow("Sorry, docking station full!");
   });
 })
